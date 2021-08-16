@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Attributes>
+    
+    <!--  There are two kinds of attribute tags: <ServiceAttribute> and <OperationAttribute>
+          Each of these tags has a Name attribute.
+
+             Each of these tags can contain an infinite number of <Member> elements:
+             Each <Member> element has a Name attribute.
+             Each <Member> element can have the following optional attributes:
+                   IsEditable="True" - When True, a value can be entered that is different from standard values in the dropdown list
+                   DataType="Int32"  - Specifies a datatype to be used for validation purposes.  Valid values are Int32, String, TimeSpan, UriTemplate.
+                                       When the datatype is String or UriTemplate, the value will be quoted in the resulting attribute string.
+                   Default="65536"   - Specifies a default value.  Not currently used for anything more than documentation.
+                   Format="hh:mm:ss" - Specifies a format.  Not currently used for anything more than documentation.
+            
+             Each <Member> element can contain an infinite number of <MemberValue> elements:
+             MemberValue elements specify values to appear in a dropdownlist as valid choices for a Member attribute.  
+             When IsEditable is False (or not set), these are the only valid values.
+    -->
+
+    <ServiceAttributes>
+        <ServiceAttribute Name="ServiceContract">
+            <Member Name="ProtectionLevel">
+                <MemberValue>ProtectionLevel.None</MemberValue>
+                <MemberValue>ProtectionLevel.Sign</MemberValue>
+                <MemberValue>ProtectionLevel.EncryptAndSign</MemberValue>
+            </Member>
+            <Member Name="SessionMode">
+                <MemberValue>SessionMode.Allowed</MemberValue>
+                <MemberValue>SessionMode.Required</MemberValue>
+                <MemberValue>SessionMode.NotAllowed</MemberValue>
+            </Member>
+        </ServiceAttribute>
+
+        <ServiceAttribute Name="ServiceBehavior">
+            <Member Name="InstanceContextMode">
+                <MemberValue>InstanceContextMode.PerSession</MemberValue>
+                <MemberValue>InstanceContextMode.PerCall</MemberValue>
+                <MemberValue>InstanceContextMode.Single</MemberValue>
+            </Member>
+            <Member Name="AddressFilterMode">
+                <MemberValue>AddressFilterMode.Exact</MemberValue>
+                <MemberValue>AddressFilterMode.Prefix</MemberValue>
+                <MemberValue>AddressFilterMode.Any</MemberValue>
+            </Member>
+            <Member Name="AutomaticSessionShutdown">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="ConcurrencyMode">
+                <MemberValue>ConcurrencyMode.Single</MemberValue>
+                <MemberValue>ConcurrencyMode.Reentrant</MemberValue>
+                <MemberValue>ConcurrencyMode.Multiple</MemberValue>
+            </Member>
+            <Member Name="IncludeExceptionDetailInFaults">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="IgnoreExtensionDataObject">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="MaxItemsInObjectGraph" IsEditable="True" DataType="Int32" Default="65536">
+                <MemberValue>65536</MemberValue>
+            </Member>
+            <Member Name="ReleaseServiceInstanceOnTransactionComplete">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="TransactionAutoCompleteOnSessionClose">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="TransactionIsolationLevel">
+                <MemberValue>IsolationLevel.Serializable</MemberValue>
+                <MemberValue>IsolationLevel.RepeatableRead</MemberValue>
+                <MemberValue>IsolationLevel.ReadCommitted</MemberValue>
+                <MemberValue>IsolationLevel.ReadUncommitted</MemberValue>
+                <MemberValue>IsolationLevel.Snapshot</MemberValue>
+                <MemberValue>IsolationLevel.Chaos</MemberValue>
+                <MemberValue>IsolationLevel.Unspecified</MemberValue>
+            </Member>
+            <Member Name="TransactionTimeout" IsEditable="True" DataType="TimeSpan" Format="d.hh:mm:ss.ff">
+            	<MemberValue>9999.23:59:59.99</MemberValue>
+            </Member>
+            <Member Name="UseSynchronizationContext">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="ValidateMustUnderstand">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+        </ServiceAttribute>
+
+        <ServiceAttribute Name="AspNetCompatibilityRequirements">
+            <Member Name="RequirementsMode">
+                <MemberValue>AspNetCompatibilityRequirementsMode.NotAllowed</MemberValue>
+                <MemberValue>AspNetCompatibilityRequirementsMode.Allowed</MemberValue>
+                <MemberValue>AspNetCompatibilityRequirementsMode.Required</MemberValue>
+            </Member>
+        </ServiceAttribute>
+        <ServiceAttribute Name="XmlSerializerFormat">
+        </ServiceAttribute>
+
+    </ServiceAttributes>
+
+    <OperationAttributes>
+        <OperationAttribute Name="OperationContract">
+            <Member Name="Action" IsEditable="True" DataType="String" Default="http://tempuri.org/">
+                <MemberValue>http://tempuri.org/</MemberValue>
+            </Member>
+            <Member Name="AsyncPattern">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="IsInitiating">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="IsOneWay">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="IsTerminating">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="ProtectionLevel">
+                <MemberValue>ProtectionLevel.None</MemberValue>
+                <MemberValue>ProtectionLevel.Sign</MemberValue>
+                <MemberValue>ProtectionLevel.EncryptAndSign</MemberValue>
+            </Member>
+            <Member Name="ReplyAction" IsEditable="True" DataType="String" Default="http://tempuri.org/">
+                <MemberValue>http://tempuri.org/</MemberValue>
+            </Member>
+        </OperationAttribute>
+        <OperationAttribute Name="OperationBehavior">
+            <Member Name="ReleaseInstanceMode">
+                <MemberValue>ReleaseInstanceMode.None</MemberValue>
+                <MemberValue>ReleaseInstanceMode.BeforeCall</MemberValue>
+                <MemberValue>ReleaseInstanceMode.AfterCall</MemberValue>
+                <MemberValue>ReleaseInstanceMode.BeforeAndAfterCall</MemberValue>
+            </Member>
+            <Member Name="TransactionAutoComplete">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="TransactionScopeRequired">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="AutoDisposeParameters">
+                <MemberValue>true</MemberValue>
+                <MemberValue>false</MemberValue>
+            </Member>
+            <Member Name="Impersonation">
+                <MemberValue>ImpersonationOption.NotAllowed</MemberValue>
+                <MemberValue>ImpersonationOption.Allowed</MemberValue>
+                <MemberValue>ImpersonationOption.Required</MemberValue>
+            </Member>
+        </OperationAttribute>
+        <OperationAttribute Name="WebInvoke">
+            <Member Name="BodyStyle">
+                <MemberValue>WebMessageBodyStyle.Bare</MemberValue>
+                <MemberValue>WebMessageBodyStyle.Wrapped</MemberValue>
+                <MemberValue>WebMessageBodyStyle.WrappedRequest</MemberValue>
+                <MemberValue>WebMessageBodyStyle.WrappedResponse</MemberValue>
+            </Member>
+            <Member Name="Method" DataType="String">
+                <MemberValue>*</MemberValue>
+                <MemberValue>GET</MemberValue>
+                <MemberValue>POST</MemberValue>
+                <MemberValue>PUT</MemberValue>
+                <MemberValue>DELETE</MemberValue>
+                <MemberValue>HEAD</MemberValue>
+                <MemberValue>OPTIONS</MemberValue>
+                <MemberValue>TRACE</MemberValue>
+                <MemberValue>CONNECT</MemberValue>
+            </Member>
+            <Member Name="RequestFormat">
+                <MemberValue>WebMessageFormat.Xml</MemberValue>
+                <MemberValue>WebMessageFormat.Json</MemberValue>
+            </Member>
+            <Member Name="ResponseFormat">
+                <MemberValue>WebMessageFormat.Xml</MemberValue>
+                <MemberValue>WebMessageFormat.Json</MemberValue>
+            </Member>
+            <Member Name="UriTemplate" IsEditable="True" DataType="UriTemplate">
+            </Member>
+        </OperationAttribute>
+        <OperationAttribute Name="WebGet">
+            <Member Name="BodyStyle">
+                <MemberValue>WebMessageBodyStyle.Bare</MemberValue>
+                <MemberValue>WebMessageBodyStyle.Wrapped</MemberValue>
+                <MemberValue>WebMessageBodyStyle.WrappedRequest</MemberValue>
+                <MemberValue>WebMessageBodyStyle.WrappedResponse</MemberValue>
+            </Member>
+            <Member Name="RequestFormat">
+                <MemberValue>WebMessageFormat.Xml</MemberValue>
+                <MemberValue>WebMessageFormat.Json</MemberValue>
+            </Member>
+            <Member Name="ResponseFormat">
+                <MemberValue>WebMessageFormat.Xml</MemberValue>
+                <MemberValue>WebMessageFormat.Json</MemberValue>
+            </Member>
+            <Member Name="UriTemplate" IsEditable="True" DataType="UriTemplate">
+            </Member>
+        </OperationAttribute>
+        <OperationAttribute Name="STAOperationBehavior">
+        </OperationAttribute>
+        <OperationAttribute Name="TransactionFlow(TransactionFlowOption.Allowed)"/>
+        <OperationAttribute Name="TransactionFlow(TransactionFlowOption.Mandatory)"/>
+        <OperationAttribute Name="TransactionFlow(TransactionFlowOption.NotAllowed)"/>
+    </OperationAttributes>
+     
+</Attributes>
+

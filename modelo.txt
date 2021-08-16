@@ -1,0 +1,16 @@
+       ////////////////////////////////////////////////////////////////////////////////
+       DS_1 = CREATE DATASTORE
+       DS_1.DATAOBJECT = "blq356"
+       ////////////////////////////////////////////////////////////////////////////////
+
+       DS_1.INSERTROW(1)
+       DS_1.SetItem(1, 'LOCAL'                  , ws_dsc_cedente_msg1)
+       DS_1.SetItem(1, 'cod_banco'              , Profilestring("boleto.INI", "estabelec", WS_cod_banco, "none"))
+       DS_1.SetItem(1, 'DATA_DOC'               , ws_dat_documento)
+       DS_1.SetItem(1, 'NUM_DOC'                , string(ws_nro_documento))
+       DS_1.SetItem(1, 'ESPECIE_DOC'            , ws_cod_especie_documento)
+       DS_1.SetItem(1, 'ACEITE'                 , ws_cod_aceite)
+       DS_1.SetItem(1, 'CEDENTE_MSG1'           , ws_DSC_CEDENTE_MSG1)
+       DS_1.SetItem(1, 'DATA_PROC'              , ws_dat_processamento)
+       DS_1.SetItem(1, 'USU_BANCO'              , ws_dsc_uso_banco)
+  
